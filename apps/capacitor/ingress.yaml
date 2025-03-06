@@ -7,7 +7,7 @@ metadata:
 spec:
   routes:
     - kind: Rule
-      match: Host(`capacitor.rpi.local`)
+      match: Host(`capacitor.int.draugelis.dev`)
       services:
         - kind: Service
           name: capacitor
@@ -21,4 +21,4 @@ metadata:
   namespace: rpi-lab
 spec:
   rules:
-    - host: capacitor.rpi.local
+    - host: capacitor.int.draugelis.dev
