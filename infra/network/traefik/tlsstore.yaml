@@ -1,0 +1,9 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: TLSStore
+metadata:
+  name: default-certs
+  namespace: network
+spec:
+  defaultCertificate:
+    secretName: traefik-selfsigned-cert
+    namespace: flux-system

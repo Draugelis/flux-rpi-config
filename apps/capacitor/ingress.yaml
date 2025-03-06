@@ -13,6 +13,9 @@ spec:
           name: capacitor
           namespace: rpi-lab
           port: 9000
+  tls:
+    store:
+      name: default-certs
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -22,3 +25,6 @@ metadata:
 spec:
   rules:
     - host: capacitor.int.draugelis.dev
+  tls:
+    - hosts:
+        - capacitor.int.draugelis.dev

@@ -1,0 +1,6 @@
+creation_rules:
+  - path_regex: ^(apps|infra)/.*\.enc\.yaml$
+    encrypted_regex: ^(data|stringData)$
+    key_groups:
+      - age:
+        - age1geg67utr7hyn6tvslydw4yjw0y5mlhkvcqk2h96l225ssxwhx5hsye54q9
