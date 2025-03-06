@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: capacitor-cert
+  namespace: capacitor
+spec:
+  secretName: capacitor-cert-secret
+  commonName: capacitor.int.draugelis.dev
+  dnsNames:
+    - capacitor.int.draugelis.dev
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: ClusterIssuer

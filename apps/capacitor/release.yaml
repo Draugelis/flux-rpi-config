@@ -3,9 +3,9 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: capacitor
-  namespace: rpi-lab
+  namespace: capacitor
 spec:
-  targetNamespace: rpi-lab
+  targetNamespace: capacitor
   interval: 10m
   retryInterval: 2m
   timeout: 5m
