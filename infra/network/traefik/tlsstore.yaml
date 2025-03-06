@@ -7,3 +7,5 @@ spec:
   defaultCertificate:
     secretName: traefik-selfsigned-cert
     namespace: flux-system
+  dependsOn:
+    - traefik
