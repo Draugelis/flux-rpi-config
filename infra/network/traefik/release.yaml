@@ -90,14 +90,3 @@ spec:
         filters: {}
         # -- Enables accessLogs for internal resources. Default: false.
         addInternals: false
-
-  postRenderers:
-    - kustomize:
-        patches:
-          - target:
-              kind: CustomResourceDefinition
-            patch: |-
-              - op: add
-                path: /metadata/annotations
-                value:
-                  "helm.sh/hook": "crd-install"
