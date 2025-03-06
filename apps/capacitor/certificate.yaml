@@ -5,10 +5,12 @@ metadata:
   name: capacitor-cert
   namespace: capacitor
 spec:
-  secretName: capacitor-cert-secret
+  secretName: capacitor-cert
+  duration: 8760h # 1 year
+  renewBefore: 240h # 10 days
   commonName: capacitor.int.draugelis.dev
   dnsNames:
     - capacitor.int.draugelis.dev
   issuerRef:
-    name: letsencrypt-issuer
-    kind: ClusterIssuer
+    name: selfsigned-issuer
+    kind: Issuer
