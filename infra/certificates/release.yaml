@@ -9,12 +9,11 @@ spec:
   chart:
     spec:
       chart: cert-manager
-      version: "1.x"
       sourceRef:
         kind: HelmRepository
-        name: cert-manager
+        name: jetstack
         namespace: flux-system
-      interval: 12h
+      version: v1.17.1
   values:
     crds:
       enabled: true
