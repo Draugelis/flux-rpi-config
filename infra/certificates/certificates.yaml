@@ -13,3 +13,9 @@ spec:
   dnsNames:
   - "int.draugelis.dev"
   - "*.int.draugelis.dev"
+  secretTemplate:
+    annotations:
+      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
+      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "rpi-lab,capacitor"
+      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
+      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "rpi-lab,capacitor"
