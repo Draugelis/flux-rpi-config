@@ -2,12 +2,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: star-staging
+  name: star-prod
   namespace: certificates
 spec:
-  secretName: star-staging-tls
+  secretName: star-prod-tls
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-prod
     kind: ClusterIssuer
   commonName: "*.int.draugelis.dev"
   dnsNames:
