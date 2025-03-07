@@ -8,11 +8,11 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: reflector
+      chart: emberstack/reflector
       sourceRef:
         kind: HelmRepository
         name: emberstack
         namespace: flux-system
-      version: v9.0.318
+      version: 9.0.318
   values:
     fullnameOverride: reflector
