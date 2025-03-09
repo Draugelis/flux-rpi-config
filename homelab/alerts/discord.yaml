@@ -1,0 +1,28 @@
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: discord
+  namespace: flux-system
+spec:
+  type: discord
+  address: https://discord.com/api/webhooks/<DISCORD_WEBHOOK_ID>/<DISCORD_WEBHOOK_TOKEN>
+  secretRef:
+    name: discord-webhook
+
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: reconciliation-alerts
+  namespace: flux-system
+spec:
+  summary: "Reconciliation Alerts"
+  providerRef:
+    name: discord
+  eventSeverity: info
+  eventSources:
+    - kind: GitRepository
+      name: '*'
+    - kind: Kustomization
+      name: '*'
