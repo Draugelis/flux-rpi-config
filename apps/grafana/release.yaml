@@ -1,0 +1,29 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: rpi-lab
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: grafana
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+        namespace: flux-system
+      version: 8.10.1
+  values: 
+    ingress:
+      enabled: true
+      annotations:
+        - ubernetes.io/ingress.class: traefik
+      hosts:
+        - grafana.int.draugelis.dev
+      tls:
+        secretName: star-prod-tls
+    admin:
+      existingSecret: grafana-credentials
+      userKey: admin-user
+      passwordKey: admin-password
