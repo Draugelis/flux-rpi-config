@@ -5,7 +5,7 @@ metadata:
   name: capacitor
   namespace: rpi-lab
 spec:
-  targetNamespace: capacitor
+  targetNamespace: rpi-lab
   interval: 10m
   retryInterval: 2m
   timeout: 5m
