@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: victoriametrics
         namespace: flux-system
-      version: 8.10.1
+      version: 0.14.3
   values:
     server:
       ingress:
