@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: victoriametrics
+  namespace: observability
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: victoria-metrics-single
+      sourceRef:
+        kind: HelmRepository
+        name: victoriametrics
+        namespace: flux-system
+      version: 8.10.1
+  values:
+    server:
+      ingress:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+        hosts:
+          - victoriametrics.int.draugelis.dev
+        tls:
+          - secretName: star-prod-tls
+      persistentVolume:
+        size: 8Gi
