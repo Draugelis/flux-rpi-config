@@ -21,7 +21,10 @@ spec:
         annotations:
           kubernetes.io/ingress.class: traefik
         hosts:
-          - victoriametrics.int.draugelis.dev
+          - name: victoriametrics.int.draugelis.dev
+            path:
+              - /
+            port: https
         tls:
           - secretName: star-prod-tls
       persistentVolume:
