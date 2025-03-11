@@ -6,8 +6,6 @@ metadata:
   namespace: observability
 spec:
   interval: 1h
-  dependsOn:
-    - name: prometheus-stack-crds
   chart:
     spec:
       chart: kube-prometheus-stack
