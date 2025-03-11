@@ -5,5 +5,4 @@ resources:
 - traefik.yaml
 - jetstack.yaml
 - emberstack.yaml
-- grafana.yaml
 - victoriametrics.yaml
