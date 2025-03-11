@@ -5,3 +5,4 @@ resources:
 - traefik.yaml
 - jetstack.yaml
 - emberstack.yaml
+- prometheus-community.yaml
