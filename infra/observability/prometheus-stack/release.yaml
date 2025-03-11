@@ -5,6 +5,7 @@ metadata:
   name: prometheus-stack
   namespace: observability
 spec:
+  inteval: 1h
   dependsOn:
     - name: prometheus-stack-crds
   chart:
