@@ -12,10 +12,6 @@ spec:
   wait: true
   prune: true
   path: "./"
-  install:
-    crds: Create
-  upgrade:
-    crds: CreateReplace
   sourceRef:
     kind: OCIRepository
     name: n8n
