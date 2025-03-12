@@ -12,7 +12,7 @@ prometheusSpec:
     crds: CreateReplace
   chart:
     spec:
-      chart: kube-prometheus-stack
+      chart: n8n
       version: 1.*
       sourceRef:
         kind: OCIRepository
