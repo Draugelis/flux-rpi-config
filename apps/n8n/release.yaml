@@ -26,6 +26,7 @@ spec:
       className: traefik
       hosts:
         - host: n8n.int.draugelis.dev
+          paths: []
       tls:
         - hosts:
             - n8n.int.draugelis.dev
