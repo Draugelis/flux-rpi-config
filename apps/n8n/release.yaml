@@ -21,6 +21,8 @@ spec:
   values:
     ingress:
       enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
       className: traefik
       hosts:
         - host: n8n.int.draugelis.dev
