@@ -1,0 +1,32 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: n8n
+  namespace: rpi-lab
+spec:
+  targetNamespace: rpi-lab
+  interval: 10m
+  retryInterval: 2m
+  timeout: 5m
+  wait: true
+  prune: true
+  path: "./"
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  sourceRef:
+    kind: OCIRepository
+    name: n8n
+    namespace: flux-system
+  values:
+    ingress:
+      enabled: true
+      className: traefik
+      hosts:
+        - host: n8n.int.draugelis.dev
+      tls:
+        - hosts:
+          - n8n.int.draugelis.dev
+          secretName: star-prod-tls
