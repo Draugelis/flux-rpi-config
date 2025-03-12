@@ -28,5 +28,5 @@ spec:
         - host: n8n.int.draugelis.dev
       tls:
         - hosts:
-          - n8n.int.draugelis.dev
+            - n8n.int.draugelis.dev
           secretName: star-prod-tls
