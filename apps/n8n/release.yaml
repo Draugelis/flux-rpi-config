@@ -4,7 +4,7 @@ kind: HelmRelease
 metadata:
   name: n8n
   namespace: rpi-lab
-prometheusSpec:
+spec:
   interval: 1h
   install:
     crds: Create
