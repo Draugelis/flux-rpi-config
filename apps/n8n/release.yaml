@@ -1,21 +1,23 @@
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
+kind: HelmRelease
 metadata:
   name: n8n
   namespace: rpi-lab
-spec:
-  targetNamespace: rpi-lab
-  interval: 10m
-  retryInterval: 2m
-  timeout: 5m
-  wait: true
-  prune: true
-  path: "./"
-  sourceRef:
-    kind: OCIRepository
-    name: n8n
-    namespace: flux-system
+prometheusSpec:
+  interval: 1h
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      version: 1.*
+      sourceRef:
+        kind: OCIRepository
+        name: n8n
+        namespace: flux-system
   values:
     ingress:
       enabled: true
