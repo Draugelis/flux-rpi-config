@@ -1,0 +1,26 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: n8n
+  namespace: rpi-lab
+spec:
+  routes:
+    - kind: Rule
+      match: Host(`n8n.int.draugelis.dev`)
+      services:
+        - kind: Service
+          name: n8n
+          namespace: rpi-lab
+          port: 5678
+  tls:
+      secretName: star-prod-tls
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: n8n
+  namespace: rpi-lab
+spec:
+  rules:
+    - host: n8n.int.draugelis.dev
