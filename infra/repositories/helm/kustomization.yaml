@@ -6,4 +6,3 @@ resources:
 - jetstack.yaml
 - emberstack.yaml
 - prometheus-community.yaml
-- n8n.yaml
